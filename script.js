@@ -42,13 +42,6 @@ btnScrollTo.addEventListener('click', function (e) {
 ///////////////////////////////////////
 // PAGE NEVIGATION
 
-// document.querySelectorAll('.nav__link').forEach(function (el) {
-//   el.addEventListener('click', function (e) {
-// e.preventDefault();
-// const id = this.getAttribute('href');
-// document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-//   });
-// });
 //EVENT DELEGATION
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   console.log(e.target);
@@ -113,24 +106,7 @@ nav.addEventListener('mouseover', handelHover.bind(0.5));
 nav.addEventListener('mouseout', handelHover.bind(1));
 
 // STICKY NAVIGATION
-// const initialsCoords = section1.getBoundingClientRect();
-// console.log(initialsCoords);
-// window.addEventListener('scroll', function () {
-//   console.log(window.scrollY);
-//   if (window.scrollY > initialsCoords.top) nav.classList.add('sticky');
-//   else nav.classList.remove('sticky');
-// });
-// const obsCallback = function (entries, observer) {
-//   entries.forEach(entry => {
-//     console.log(entry);
-//   });
-// };
-// const obsOptions = {
-//   root: null,
-//   threshold: [0, 0.2],
-// };
-// const observer = new IntersectionObserver(obsCallback, obsOptions);
-// observer.observe(section1);
+
 const navHeight = nav.getBoundingClientRect().height;
 
 const stickyNav = function (entries) {
@@ -247,7 +223,6 @@ const sliders = function () {
   });
   dotContainer.addEventListener('click', function (e) {
     if (e.target.classList.contains('dots__dot')) {
-      // console.log('DOT');
       const { slide } = e.target.dataset;
       console.log(e.target.dataset);
       gotoSlide(slide);
@@ -256,12 +231,3 @@ const sliders = function () {
   });
 };
 sliders();
-///////////////////////////////////////
-//TESTING
-// console.log(document.documentElement);
-// console.log(document.head);
-// console.log(document.body);
-
-//Style
-// message.style.backgroundColor = '#37383d';
-// message.style.width = '120%';
